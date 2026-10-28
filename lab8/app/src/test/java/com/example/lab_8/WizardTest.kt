@@ -46,4 +46,17 @@ class WizardTest {
 
         assertEquals(70, evilWizard.mana)
     }
+
+    @Test
+    fun testThatTrainMethodWorksWhenManaIsAtleastFiveorMore() {
+        evilWizard.train()
+
+        assertEquals(11, evilWizard.spellPower)
+    }
+
+    @Test
+    fun TestThatTrainWontDoAnythingWhenManaIsLowerThanFive() {
+        insufficentWizard = Wizard("InsufficentWizard", 4, 1)
+        assertEquals(4, )
+    }
 }
