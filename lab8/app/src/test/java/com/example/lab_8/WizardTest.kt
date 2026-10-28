@@ -49,14 +49,17 @@ class WizardTest {
 
     @Test
     fun testThatTrainMethodWorksWhenManaIsAtleastFiveorMore() {
-        evilWizard.train()
-
+        val sufficientWizard = Wizard("sufficientWizard", 10, 10)
+        sufficientWizard.train()
         assertEquals(11, evilWizard.spellPower)
+        assertEquals(5, sufficientWizard.mana)
     }
 
     @Test
     fun TestThatTrainWontDoAnythingWhenManaIsLowerThanFive() {
-        insufficentWizard = Wizard("InsufficentWizard", 4, 1)
-        assertEquals(4, )
+        val insufficentWizard = Wizard("InsufficentWizard", 4, 1)
+        insufficentWizard.train()
+        assertEquals(1, insufficentWizard.spellPower)
+        assertEquals(4, insufficentWizard.mana)
     }
 }
